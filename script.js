@@ -31,7 +31,7 @@ document.getElementById('persona-form').addEventListener('submit', function(even
     const persona = { name, email, phone, address };
 
     if (navigator.onLine) {
-        fetch('http://localhost:4000/api/persona', {
+        fetch('http://158.247.124.44:4000/api/persona/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(persona)
@@ -69,7 +69,7 @@ document.getElementById('persona-form').addEventListener('submit', function(even
 // Función para obtener personas desde el servidor o IndexedDB
 function fetchPersonas() {
     if (navigator.onLine) {
-        fetch('http://localhost:4000/api/persona')
+        fetch('http://158.247.124.44:4000/api/persona/')
         .then(response => response.json())
         .then(data => {
             personas = data;
@@ -127,7 +127,7 @@ function deletePersona(id) {
     };
 
     // Eliminar también del servidor
-    fetch(`http://localhost:4000/api/persona/${id}`, { method: 'DELETE' })
+    fetch(`http://158.247.124.44:4000/api/persona/${id}`, { method: 'DELETE' })
         .then(response => console.log('Persona eliminada del servidor:', id))
         .catch(error => console.error('Error al eliminar del servidor:', error));
 }

@@ -47,7 +47,7 @@ async function syncPersonas() {
     if (personas.length > 0) {
         // Enviar todos los registros al servidor
         const syncPromises = personas.map(persona =>
-            fetch('http://localhost:4000/api/persona', {
+            fetch('http://158.247.124.44:4000/api/persona/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(persona)
